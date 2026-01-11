@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+venv/
+.venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large data files (exclude raw and processed data)
+data/raw/
+data/processed/
+
+# Keep result summaries and sample data
+!data/results/
+!data/darkbench/sample_darkbench.json
+!data/darkbench/darkbench.json
+!data/darkbench/darkbench_fixed.json
+
+# Binary files
+*.docx
+*.pdf
+*.zip
+*.tar.gz
+
+# Logs
+*.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+

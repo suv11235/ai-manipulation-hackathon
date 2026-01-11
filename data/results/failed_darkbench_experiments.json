@@ -1,0 +1,842 @@
+{
+  "quota_exceeded": [
+    {
+      "file": "darkbench:_db_0001_expert_reinforcing_gpt-3.5-turbo_20260111_020553.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0001",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0001_expert_reinforcing_gpt-3.5-turbo_20260111_022019.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0001",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0001_neutral_reinforcing_gpt-3.5-turbo_20260111_020522.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0001",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0001_neutral_reinforcing_gpt-3.5-turbo_20260111_021932.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0001",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0002_expert_reinforcing_gpt-3.5-turbo_20260111_020656.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0002",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0002_expert_reinforcing_gpt-3.5-turbo_20260111_022154.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0002",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0002_neutral_reinforcing_gpt-3.5-turbo_20260111_020624.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0002",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0002_neutral_reinforcing_gpt-3.5-turbo_20260111_022106.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0002",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0003_expert_reinforcing_gpt-3.5-turbo_20260111_020759.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0003",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0003_expert_reinforcing_gpt-3.5-turbo_20260111_022329.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0003",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0003_neutral_reinforcing_gpt-3.5-turbo_20260111_020728.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0003",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0003_neutral_reinforcing_gpt-3.5-turbo_20260111_022241.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0003",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0004_expert_reinforcing_gpt-3.5-turbo_20260111_020900.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0004",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0004_expert_reinforcing_gpt-3.5-turbo_20260111_022503.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0004",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0004_neutral_reinforcing_gpt-3.5-turbo_20260111_020830.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0004",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0004_neutral_reinforcing_gpt-3.5-turbo_20260111_022416.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0004",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0005_expert_reinforcing_gpt-3.5-turbo_20260111_021004.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0005",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0005_expert_reinforcing_gpt-3.5-turbo_20260111_022637.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0005",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0005_neutral_reinforcing_gpt-3.5-turbo_20260111_020932.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0005",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_0005_neutral_reinforcing_gpt-3.5-turbo_20260111_022550.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0005",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_scarcity_001_neutral_reinforcing_gpt-3.5-turbo_20260111_015345.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_scarcity_001",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    },
+    {
+      "file": "darkbench:_db_urgency_001_neutral_reinforcing_gpt-3.5-turbo_20260111_015313.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_urgency_001",
+      "model": "gpt-3.5-turbo",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "num_turns": 10
+    }
+  ],
+  "invalid_request": [
+    {
+      "file": "darkbench:_db_0007_authority_reinforcing_claude-sonnet-4-5-20250929_20260111_141306.json",
+      "persona": "Authority",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0007",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0007_authority_resistant_claude-sonnet-4-5-20250929_20260111_141307.json",
+      "persona": "Authority",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0007",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0008_authority_reinforcing_claude-sonnet-4-5-20250929_20260111_141319.json",
+      "persona": "Authority",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0008",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0008_authority_resistant_claude-sonnet-4-5-20250929_20260111_141322.json",
+      "persona": "Authority",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0008",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0008_expert_reinforcing_claude-sonnet-4-5-20250929_20260111_141313.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0008",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0008_expert_resistant_claude-sonnet-4-5-20250929_20260111_141314.json",
+      "persona": "Expert",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0008",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0008_neutral_reinforcing_claude-sonnet-4-5-20250929_20260111_141309.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0008",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0008_neutral_resistant_claude-sonnet-4-5-20250929_20260111_141311.json",
+      "persona": "Neutral",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0008",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0008_peer_reinforcing_claude-sonnet-4-5-20250929_20260111_141316.json",
+      "persona": "Peer",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0008",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0008_peer_resistant_claude-sonnet-4-5-20250929_20260111_141317.json",
+      "persona": "Peer",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0008",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0009_authority_reinforcing_claude-sonnet-4-5-20250929_20260111_141334.json",
+      "persona": "Authority",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0009",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0009_authority_resistant_claude-sonnet-4-5-20250929_20260111_141336.json",
+      "persona": "Authority",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0009",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0009_expert_reinforcing_claude-sonnet-4-5-20250929_20260111_141327.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0009",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0009_expert_resistant_claude-sonnet-4-5-20250929_20260111_141328.json",
+      "persona": "Expert",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0009",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0009_neutral_reinforcing_claude-sonnet-4-5-20250929_20260111_141323.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0009",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0009_neutral_resistant_claude-sonnet-4-5-20250929_20260111_141325.json",
+      "persona": "Neutral",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0009",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0009_peer_reinforcing_claude-sonnet-4-5-20250929_20260111_141330.json",
+      "persona": "Peer",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0009",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0009_peer_resistant_claude-sonnet-4-5-20250929_20260111_141332.json",
+      "persona": "Peer",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0009",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0010_authority_reinforcing_claude-sonnet-4-5-20250929_20260111_141347.json",
+      "persona": "Authority",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0010",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0010_authority_resistant_claude-sonnet-4-5-20250929_20260111_141348.json",
+      "persona": "Authority",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0010",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0010_expert_reinforcing_claude-sonnet-4-5-20250929_20260111_141341.json",
+      "persona": "Expert",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0010",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0010_expert_resistant_claude-sonnet-4-5-20250929_20260111_141342.json",
+      "persona": "Expert",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0010",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0010_neutral_reinforcing_claude-sonnet-4-5-20250929_20260111_141338.json",
+      "persona": "Neutral",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0010",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0010_neutral_resistant_claude-sonnet-4-5-20250929_20260111_141340.json",
+      "persona": "Neutral",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0010",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0010_peer_reinforcing_claude-sonnet-4-5-20250929_20260111_141344.json",
+      "persona": "Peer",
+      "pattern": "reinforcing",
+      "scenario": "DarkBench: db_0010",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    },
+    {
+      "file": "darkbench:_db_0010_peer_resistant_claude-sonnet-4-5-20250929_20260111_141345.json",
+      "persona": "Peer",
+      "pattern": "resistant",
+      "scenario": "DarkBench: db_0010",
+      "model": "claude-sonnet-4-5-20250929",
+      "error_turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "num_turns": 5
+    }
+  ],
+  "other_errors": [],
+  "summary": {
+    "total_failed": 48,
+    "quota_exceeded": 22,
+    "invalid_request": 26,
+    "other_errors": 0
+  }
+}
