@@ -158,15 +158,22 @@ class Conversation:
         # Use same provider as conversation model to avoid dual API calls
         feedback_model = self.model  # Use same model as conversation by default
         # For cost savings, could use cheaper variant of same provider
-        if self.model.startswith("gpt") or self.model.startswith("o1"):
+        
+        # Check if this is an OpenRouter model first (has "/" but not direct provider format)
+        is_openrouter = (self.model.startswith("or-") or 
+                        ("/" in self.model and not self.model.startswith("gpt") and 
+                         not self.model.startswith("claude") and not self.model.startswith("o1")))
+        
+        if is_openrouter:
+            # OpenRouter model - use OpenRouter for feedback too
+            # Use a cheaper OpenRouter model if available, otherwise same model
+            feedback_model = self.model  # Could use anthropic/claude-3.5-haiku via OpenRouter if cheaper
+        elif self.model.startswith("gpt") or self.model.startswith("o1"):
             # Use cheaper GPT model for feedback if available
             feedback_model = MODELS.get("gpt35", "gpt-3.5-turbo")
-        elif self.model.startswith("claude") or self.model.startswith("anthropic/"):
-            # Use cheaper Claude model for feedback if available
+        elif self.model.startswith("claude"):
+            # Direct Anthropic API - use cheaper Claude model for feedback
             feedback_model = MODELS.get("claude-3-5-haiku", "claude-3-5-haiku-20241022")
-        elif self.model.startswith("or-") or "/" in self.model:
-            # OpenRouter model - use same model for feedback (or cheaper variant if available)
-            feedback_model = self.model
         
         self.feedback_simulator = FeedbackSimulator(
             pattern=feedback_pattern,
@@ -180,18 +187,23 @@ class Conversation:
         if self.enable_scoring:
             if scoring_model is None:
                 # Auto-select scoring model from same provider as conversation model
-                if self.model.startswith("gpt") or self.model.startswith("o1"):
-                    # Use GPT-4 for OpenAI models (or gpt-4o-mini if available)
-                    from src.config import SCORING_MODEL
-                    scoring_model = SCORING_MODEL  # Default to gpt-4
-                elif self.model.startswith("claude") or self.model.startswith("anthropic/"):
-                    # Use Claude Sonnet 4.5 for Anthropic models (good balance, replaces deprecated 3.5 Sonnet)
-                    from src.config import SCORING_MODEL_CLAUDE
-                    scoring_model = SCORING_MODEL_CLAUDE
-                elif self.model.startswith("or-") or "/" in self.model:
+                # Check if this is an OpenRouter model first
+                is_openrouter = (self.model.startswith("or-") or 
+                                ("/" in self.model and not self.model.startswith("gpt") and 
+                                 not self.model.startswith("claude") and not self.model.startswith("o1")))
+                
+                if is_openrouter:
                     # OpenRouter model - use OpenRouter scoring model
                     from src.config import SCORING_MODEL_OPENROUTER
                     scoring_model = SCORING_MODEL_OPENROUTER
+                elif self.model.startswith("gpt") or self.model.startswith("o1"):
+                    # Use GPT-4 for OpenAI models (or gpt-4o-mini if available)
+                    from src.config import SCORING_MODEL
+                    scoring_model = SCORING_MODEL  # Default to gpt-4
+                elif self.model.startswith("claude"):
+                    # Direct Anthropic API - use Claude Sonnet 4.5 for scoring
+                    from src.config import SCORING_MODEL_CLAUDE
+                    scoring_model = SCORING_MODEL_CLAUDE
                 else:
                     # Fallback to default
                     from src.config import SCORING_MODEL

@@ -36,8 +36,8 @@ MODELS = {
     # Note: claude-3-opus and claude-3-sonnet are deprecated/retired
     
     # OpenRouter Models (uses OpenAI-compatible API)
-    "or-claude-sonnet-4-5": "anthropic/claude-sonnet-4-20250514",  # Claude Sonnet 4.5 via OpenRouter
-    "or-claude-sonnet": "anthropic/claude-sonnet-4-20250514",  # Alias for Claude Sonnet 4.5 via OpenRouter
+    "or-claude-sonnet-4-5": "anthropic/claude-sonnet-4.5",  # Claude Sonnet 4.5 via OpenRouter
+    "or-claude-sonnet": "anthropic/claude-sonnet-4.5",  # Alias for Claude Sonnet 4.5 via OpenRouter
 }
 
 # Experiment Configuration
@@ -73,7 +73,7 @@ RESULTS_DIR = os.path.join(DATA_DIR, "results")
 # Scoring Configuration
 SCORING_MODEL = "gpt-4"  # Default model used for manipulation scoring (OpenAI)
 SCORING_MODEL_CLAUDE = "claude-sonnet-4-5-20250929"  # Default scoring model for Anthropic (updated from deprecated 3.5 Sonnet)
-SCORING_MODEL_OPENROUTER = "anthropic/claude-sonnet-4-20250514"  # Default scoring model for OpenRouter Claude models
+SCORING_MODEL_OPENROUTER = "anthropic/claude-sonnet-4.5"  # Default scoring model for OpenRouter Claude models
 SCORING_TEMPERATURE = 0.0  # Deterministic scoring
 
 # Logging
