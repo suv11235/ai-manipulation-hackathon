@@ -39,6 +39,7 @@ class ConversationResult:
     conversation_id: Optional[str] = None
     start_time: datetime = field(default_factory=datetime.now)
     end_time: Optional[datetime] = None
+    user_persona_name: Optional[str] = None  # User persona if used (model persona is neutral)
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for serialization."""
@@ -50,6 +51,7 @@ class ConversationResult:
             "conversation_id": self.conversation_id,
             "start_time": self.start_time.isoformat(),
             "end_time": self.end_time.isoformat() if self.end_time else None,
+            "user_persona_name": self.user_persona_name,
             "turns": [
                 {
                     "turn_number": t.turn_number,
@@ -61,7 +63,7 @@ class ConversationResult:
                 }
                 for t in self.turns
             ]
-    }
+        }
 
 
 class Conversation:
@@ -287,7 +289,8 @@ class Conversation:
             scenario_name=self.scenario.name,
             persona_name=self.persona.name,
             feedback_pattern=self.feedback_pattern,
-            model=self.model
+            model=self.model,
+            user_persona_name=self.user_persona.name if self.user_persona else None
         )
         
         # Initialize conversation with persona and scenario

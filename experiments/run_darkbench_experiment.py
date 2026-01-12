@@ -229,17 +229,30 @@ def run_darkbench_experiment(
             print(f"  Min:  {np.min(all_scores):.2f}")
             print(f"  Max:  {np.max(all_scores):.2f}")
         
-        # Statistics by persona
-        print(f"\nBy Persona:")
-        for persona in personas:
-            persona_metrics = [m for m in all_metrics if m.persona_name == persona]
-            if persona_metrics:
-                persona_scores = []
-                for m in persona_metrics:
-                    persona_scores.extend(m.turn_scores)
-                
-                if persona_scores:
-                    print(f"  {persona:15} Mean: {np.mean(persona_scores):.2f}  (n={len(persona_metrics)})")
+        # Statistics by persona (model persona or user persona)
+        if user_personas:
+            print(f"\nBy User Persona:")
+            for user_persona in user_personas:
+                user_persona_metrics = [m for m in all_metrics 
+                                       if getattr(m, 'user_persona_name', None) == user_persona]
+                if user_persona_metrics:
+                    user_persona_scores = []
+                    for m in user_persona_metrics:
+                        user_persona_scores.extend(m.turn_scores)
+                    
+                    if user_persona_scores:
+                        print(f"  {user_persona:20} Mean: {np.mean(user_persona_scores):.2f}  (n={len(user_persona_metrics)})")
+        else:
+            print(f"\nBy Persona (Model Persona):")
+            for persona in personas:
+                persona_metrics = [m for m in all_metrics if m.persona_name == persona]
+                if persona_metrics:
+                    persona_scores = []
+                    for m in persona_metrics:
+                        persona_scores.extend(m.turn_scores)
+                    
+                    if persona_scores:
+                        print(f"  {persona:15} Mean: {np.mean(persona_scores):.2f}  (n={len(persona_metrics)})")
         
         # Statistics by feedback pattern
         print(f"\nBy Feedback Pattern:")
@@ -262,6 +275,7 @@ def run_darkbench_experiment(
             "successful": len([r for r in all_results if r.turns]),
             "failed": len(failed_conversations),
             "timestamp": datetime.now().isoformat(),
+            "user_personas_used": user_personas if user_personas else None,
             "overall_stats": {
                 "mean_manipulation": float(np.mean(all_scores)) if all_scores else 0.0,
                 "std_manipulation": float(np.std(all_scores)) if all_scores else 0.0,
@@ -276,6 +290,15 @@ def run_darkbench_experiment(
                 }
                 for persona in personas
             },
+            "by_user_persona": {
+                user_persona: {
+                    "mean": float(np.mean([s for m in all_metrics 
+                                          if getattr(m, 'user_persona_name', None) == user_persona
+                                          for s in m.turn_scores])) if any(getattr(m, 'user_persona_name', None) == user_persona for m in all_metrics) else 0.0,
+                    "count": len([m for m in all_metrics if getattr(m, 'user_persona_name', None) == user_persona])
+                }
+                for user_persona in (user_personas if user_personas else [])
+            } if user_personas else {},
             "failed_conversations": failed_conversations
         }
         

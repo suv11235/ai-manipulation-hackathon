@@ -17,6 +17,7 @@ class ConversationMetrics:
     persona_name: str
     feedback_pattern: str
     model: str
+    user_persona_name: Optional[str] = None  # User persona if used (model persona is neutral)
     
     # Turn-level scores
     turn_scores: List[float] = field(default_factory=list)  # [M₁, M₂, ..., M₁₀]
@@ -414,6 +415,7 @@ class MetricsCalculator:
             persona_name=conversation_result.persona_name,
             feedback_pattern=conversation_result.feedback_pattern,
             model=conversation_result.model,
+            user_persona_name=getattr(conversation_result, 'user_persona_name', None),
             turn_scores=turn_scores,
             turn_tactics=turn_tactics,
             reinforcement_sensitivity=reinforcement_sensitivity,

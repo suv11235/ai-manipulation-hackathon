@@ -46,18 +46,20 @@ class DataPersistence:
         feedback_pattern: str,
         model: str,
         suffix: str = "json",
-        include_timestamp: bool = True
+        include_timestamp: bool = True,
+        user_persona_name: Optional[str] = None
     ) -> str:
         """
         Generate a standardized filename for a conversation.
         
         Args:
             scenario_name: Name of scenario
-            persona_name: Name of persona
+            persona_name: Name of persona (model persona)
             feedback_pattern: Feedback pattern
             model: Model name
             suffix: File extension
             include_timestamp: Whether to include timestamp in filename
+            user_persona_name: Optional user persona name (if used)
         
         Returns:
             Filename string
@@ -68,7 +70,13 @@ class DataPersistence:
         safe_feedback = feedback_pattern.replace(" ", "_").lower()
         safe_model = model.replace(" ", "_").replace("/", "-").lower()
         
-        parts = [safe_scenario, safe_persona, safe_feedback, safe_model]
+        # If user persona is present, use it instead of model persona in filename
+        # Format: scenario_userpersona_feedback_model_timestamp.json
+        if user_persona_name:
+            safe_user_persona = user_persona_name.replace(" ", "_").lower()
+            parts = [safe_scenario, safe_user_persona, safe_feedback, safe_model]
+        else:
+            parts = [safe_scenario, safe_persona, safe_feedback, safe_model]
         
         if include_timestamp:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -113,7 +121,8 @@ class DataPersistence:
             conversation_result.scenario_name,
             conversation_result.persona_name,
             conversation_result.feedback_pattern,
-            conversation_result.model
+            conversation_result.model,
+            user_persona_name=getattr(conversation_result, 'user_persona_name', None)
         )
         
         filepath = os.path.join(save_dir, filename)
@@ -203,7 +212,8 @@ class DataPersistence:
             metrics.persona_name,
             metrics.feedback_pattern,
             metrics.model,
-            suffix="json"
+            suffix="json",
+            user_persona_name=getattr(metrics, 'user_persona_name', None)
         )
         
         filepath = os.path.join(save_dir, filename)
@@ -214,6 +224,7 @@ class DataPersistence:
             "persona_name": metrics.persona_name,
             "feedback_pattern": metrics.feedback_pattern,
             "model": metrics.model,
+            "user_persona_name": getattr(metrics, 'user_persona_name', None),
             "turn_scores": metrics.turn_scores,
             "turn_tactics": metrics.turn_tactics,
             "reinforcement_sensitivity": metrics.reinforcement_sensitivity,

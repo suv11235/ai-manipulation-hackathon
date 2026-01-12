@@ -36,6 +36,8 @@ ai-manipulation-hackathon/
 ├── scripts/             # Utility scripts
 ├── data/                # Data storage
 │   ├── results/         # Aggregated result summaries
+│   ├── raw/             # Raw conversation and metrics JSON files
+│   │   └── darkbench_experiment/  # User persona experiment results
 │   └── darkbench/       # DarkBench dataset
 └── tests/               # Unit tests
 ```
@@ -66,11 +68,22 @@ ai-manipulation-hackathon/
    # Baseline experiment
    python experiments/run_baseline.py
    
-   # Full experiment
+   # Full experiment (AI persona × feedback pattern × scenario)
    python experiments/run_full_experiment.py
    
+   # DarkBench experiment (standard - AI personas)
+   python experiments/run_darkbench_experiment.py \
+     --source data/darkbench/darkbench.json \
+     --models or-claude-sonnet-4-5 \
+     --max-queries 5
+   
    # DarkBench experiment with user personas
-   python experiments/run_darkbench_experiment.py
+   python experiments/run_darkbench_experiment.py \
+     --source data/darkbench/darkbench.json \
+     --user-persona teenager high_income_adult parent \
+     --feedback-patterns reinforcing resistant \
+     --models or-claude-sonnet-4-5 \
+     --max-queries 5
    ```
 
 ## Documentation
@@ -89,6 +102,14 @@ ai-manipulation-hackathon/
 
 ### User Persona Experiments
 We developed **7 user personas** to investigate how different user types respond to manipulative queries:
+
+**Experimental Design:**
+- **7 User Personas**: Teenager, High-Income Adult, Retired Senior, Content Creator, Parent, Student, Neutral
+- **AI Persona**: Always Neutral (to isolate user-side effects)
+- **Feedback Patterns**: Reinforcing, Resistant (or custom patterns)
+- **DarkBench Queries**: Real-world manipulative queries from DarkBench dataset
+- **Multiple Turns**: Track manipulation trajectory across conversation
+- **Target**: N queries × M user personas × P feedback patterns × K models
 
 1. **Teenager** (15-17 years): Impressionable, seeks peer approval, influenced by trends and social media
    - Vulnerable to: social_proof, authority, liking, scarcity
@@ -122,6 +143,44 @@ We developed **7 user personas** to investigate how different user types respond
 - Feedback generation is persona-appropriate, reflecting their characteristics and vulnerabilities
 - Experiments use neutral AI persona when testing user personas to isolate user-side effects
 - User personas help probe how different user types respond to manipulative queries across various dark patterns
+
+**Running User Persona Experiments:**
+```bash
+# Basic usage: test specific user personas
+python experiments/run_darkbench_experiment.py \
+  --source data/darkbench/darkbench.json \
+  --user-persona teenager parent retired_senior \
+  --feedback-patterns reinforcing resistant \
+  --models or-claude-sonnet-4-5 \
+  --max-queries 10
+
+# Available user personas:
+# - teenager
+# - high_income_adult
+# - retired_senior
+# - content_creator
+# - parent
+# - student
+# - neutral
+
+# Results are saved with user persona information:
+# - Filenames include user persona: darkbench_db_0001_teenager_reinforcing_...
+# - Conversation JSON includes "user_persona_name" field
+# - Metrics JSON includes "user_persona_name" field
+# - Summary includes "by_user_persona" statistics
+```
+
+**Analyzing User Persona Results:**
+```bash
+# Analyze user persona experiments
+python analyze_darkbench_user_persona.py
+
+# This script:
+# - Loads all conversation results with user personas
+# - Groups statistics by user persona, feedback pattern, and scenario
+# - Identifies high manipulation examples
+# - Compares vulnerability across user types
+```
 
 ## Key Metrics
 

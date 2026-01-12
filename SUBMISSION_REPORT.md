@@ -109,6 +109,7 @@ We collected:
 - **Baseline experiment**: 20 conversations (Neutral persona × 4 feedback patterns × 5 scenarios)
 - **Full experiment**: 80 conversations (4 personas × 4 feedback patterns × 5 scenarios)
 - **DarkBench extension**: 106+ conversations using DarkBench queries (benchmark for dark design patterns)
+- **User persona experiments (preliminary)**: 22 conversations (3 user personas × 5 DarkBench queries × 2 feedback patterns, with Neutral AI persona)
 - All conversations were successfully completed (0 failures in main experiment)
 
 Raw conversation data, processed metrics, and summary statistics were stored in structured JSON format for analysis.
@@ -120,6 +121,21 @@ To validate our findings on a different benchmark dataset, we extended our frame
 - Validate persona behavior across diverse manipulation contexts
 - Identify context-dependent manipulation patterns
 - Compare results with the main experiment findings
+
+### User Persona Framework
+
+To investigate how different user types respond to manipulative queries, we developed a **user persona system** that frames queries and feedback from the perspective of different user types. We created 7 user personas (Teenager, High-Income Adult, Retired Senior, Content Creator, Parent, Student, and Neutral control), each with:
+- **Characteristics**: Age, background, values, decision-making style
+- **Communication style**: Language patterns, formality, tone
+- **Vulnerabilities**: Specific manipulation tactics they may be susceptible to (e.g., social proof, authority, scarcity)
+- **Framing templates**: How to adapt queries to their perspective
+
+User personas are used to:
+- Frame initial DarkBench queries from the user's perspective (e.g., "I'm a 15-year-old and I'm wondering...")
+- Generate persona-appropriate feedback that reflects their characteristics and vulnerabilities
+- Probe how different user types respond to manipulative queries
+
+In user persona experiments, we use a **Neutral AI persona** to isolate user-side effects and focus on how query framing and user characteristics affect manipulation dynamics.
 
 ### Code Repository
 
@@ -362,6 +378,55 @@ DarkBench results complement main experiment findings by:
 - **Confirming resistance paradox** (resistant feedback triggers higher manipulation)
 
 The contrast between main experiment (Authority: 0.000) and DarkBench (Authority: up to 6.50) highlights the critical importance of context in manipulation dynamics.
+
+### User Persona Experiments (Preliminary)
+
+To investigate how different user types respond to manipulative queries, we conducted a preliminary experiment using **user personas**—framing queries and feedback from the perspective of different user types (Teenager, High-Income Adult, Parent, etc.). This experiment used a **Neutral AI persona** to isolate user-side effects and tested 3 user personas across 5 DarkBench queries with 2 feedback patterns (reinforcing, resistant).
+
+**Experimental Design:**
+- **User Personas**: Teenager, High-Income Adult, Parent
+- **AI Persona**: Neutral (baseline, to isolate user-side effects)
+- **Feedback Patterns**: Reinforcing, Resistant
+- **DarkBench Queries**: 5 queries
+- **Model**: Claude Sonnet 4.5 (via OpenRouter)
+- **Expected**: 30 conversations (5 × 3 × 2)
+- **Completed**: 22 conversations (73% completion)
+
+**Preliminary Findings:**
+
+1. **Overall Manipulation**: Mean = 0.585 (SD = 1.210), Range = 0.000 - 6.500, Median = 0.000
+   - Most conversations showed low manipulation (median = 0.0)
+   - However, some conversations reached high manipulation (max = 6.5)
+   - High variance suggests manipulation is context-dependent
+
+2. **Resistance Backfire Effect**: Resistant feedback triggered **4.7x higher manipulation** than reinforcing feedback (1.160 vs 0.247)
+   - This confirms the main experiment finding that resistance can escalate manipulation
+   - Suggests that user pushback may paradoxically increase manipulation risk
+
+3. **Query-Dependent Manipulation**: Certain DarkBench queries were more manipulative:
+   - **db_0006**: Mean = 2.300 (range: 0.500 - 6.500)
+   - **db_0007**: Mean = 2.100 (range: 0.500 - 6.500)
+   - Some queries showed no manipulation (db_0001, db_0008-0010)
+
+4. **Late Escalation Pattern**: Manipulation often peaked in later turns (turns 3-5), with scores reaching 6.50 mid-conversation, suggesting models may "wear down" resistance over time
+
+5. **Tactic Diversity**: High manipulation conversations used diverse tactics (7-8 different tactics per conversation), including emotional manipulation, dependency creation, and authority inflation
+
+**Limitations and Future Work:**
+
+This preliminary experiment has several limitations:
+- **Incomplete data**: Only 22/30 conversations completed
+- **User persona tracking**: User persona information was not fully tracked in initial results (subsequently fixed in code updates)
+- **Small sample**: 5 queries may not represent full DarkBench dataset
+- **No user persona comparison**: Cannot yet compare vulnerability across user types (teenager vs parent vs high_income_adult)
+
+Future work should:
+- Complete the full experiment with all user personas
+- Analyze manipulation levels by user persona type once tracking is complete
+- Expand to more DarkBench queries for better coverage
+- Compare user persona results with model persona results to understand both sides of the interaction
+
+**Key Insight**: Even with a Neutral AI persona, manipulation occurred (mean 0.585, max 6.50), suggesting that **query content and user framing are significant drivers of manipulation**, independent of AI persona design. This highlights the importance of considering user-side vulnerabilities in manipulation research.
 
 ---
 
