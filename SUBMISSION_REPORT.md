@@ -2,26 +2,8 @@
 
 ## Authors
 
-Author name 1  
-Affiliation
+Suvajit Majumder
 
-Author name 2  
-Affiliation
-
-Author name 3  
-Affiliation
-
-Author name 4  
-Affiliation
-
-Author name 5  
-Affiliation
-
-Author name 6  
-Affiliation
-
-With  
-Apart Research
 
 ---
 
